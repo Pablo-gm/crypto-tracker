@@ -2,9 +2,13 @@
 
 :root {
   --bg-color: #EEF0F8;
+  --bg-card: rgba(255,255,255,0.5);
+  --bg-td-hover: rgba(52,87,227,0.08);
+  --box-shadow-color: rgba(0,0,0,0.12);
   --dark-1: #3F4254;
   --gray-1: #F3F6F9;
   --gray-2: #DADEE8;
+  --gray-3: #696B7B;
   --green-1: #10CA93;
   --red-1: #F25767;
   --link-color: #274DE1;
@@ -26,12 +30,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 4rem;
+  padding-top: 4rem;
 }
 
 body{
   background-color: var(--bg-color);
   color: var(--dark-1);
+  background-image: url('./assets/images/bg-b.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 a {
@@ -80,8 +88,16 @@ a {
   display: block;
   overflow-x: auto;
   padding: 1.5rem;
-  background-color: white;
+  background-color: var(--bg-card);
   border-radius: .5rem;
   margin-bottom: 2rem;
-  box-shadow: -8px 12px 16px 0 var(--gray-2);
+  box-shadow: 0 4px 12px var(--box-shadow-color);
+  backdrop-filter: blur(24px);
+}
+
+/* For Firefox */
+@-moz-document url-prefix() { 
+  .card {
+    background-color: #fff;
+  }
 }

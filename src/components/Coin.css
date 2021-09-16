@@ -1,9 +1,34 @@
 .coin-container{
   display: grid;
-  grid-template-columns: 3fr 1fr;
+  grid-template-columns: 2fr 1fr;
   grid-gap: 1.5rem;
 }
 
 .coin-graph{
   
+}
+
+.coin-details-image{
+  margin: auto;
+  display: block;
+  width: 4rem;
+  margin-bottom: .25rem;
+}
+
+.coin-details-name{
+  font-weight: 700;
+  text-align: center;
+}
+
+.coin-details-text-label{
+  color: var(--gray-3);
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  margin-top: .5rem;
+}
+
+.coin-details-text{
+  line-height: 1.5rem;
+  font-weight: 500;
 }

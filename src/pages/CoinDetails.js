@@ -1,36 +1,36 @@
-import React, { useEffect, useCallback } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import { useParams } from 'react-router'
-
+import axios from 'axios';
 import { createChart } from 'lightweight-charts';
 import * as Constants from '../extras/Constants';
 import Coin from '../components/Coin';
 
 function CoinDetails() {
+    const [coin, setCoin] = useState({});
     const params = useParams();
-    const showDetails = true;
+    const showMissing = false;
+    console.log("params");
     console.log(params);
 
-    if(params.id){
-        console.log("yes")
-    }
-
-    const pageContent = () => {
-        if (showDetails) {
-            return(
-                <Coin/>
-            )
-        }else{
-            return (
-                <h3>Coin "{params.id || ''}" not found...</h3>
-            )
-        }
-    }
-
+    // Get data from API
     useEffect(() => {
-        init();
-    }, []);
+        if(params.id){
+            axios.get('https://api.coingecko.com/api/v3/coins/bitcoin?localization=false&tickers=false&market_data=true&community_data=false&developer_data=false&sparkline=false')
+            .then(res => {
+                // Set coins
+                setCoin(res.data);
+                //init();
+                console.log("resp");
+                console.log(res.data);
+                
+            })
+            .catch(error => console.log(error))
+        }else{
+            showMissing = true;
+        }
+    },[]);
 
-    
+
     const init = useCallback(() => {
         const chart = createChart('something', Constants.smallChart.mainOptions);
         chart.applyOptions(Constants.smallChart.applyOptions);
@@ -59,7 +59,11 @@ function CoinDetails() {
             <div id="something">
 
             </div>
-            {pageContent()}
+            {coin ? (
+                <Coin coin={coin} />
+            ) : (
+                <h3>Coin "{params.id || ''}" not found...</h3>
+            )}
         </div>
     )
 }

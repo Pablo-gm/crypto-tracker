@@ -4,7 +4,7 @@
     color: var(--dark-1);
     background-color: transparent;
     text-align: left;
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: 500;
     border-collapse: collapse;
 }
@@ -20,7 +20,8 @@ table td{
 }
 
 table tbody tr:hover{
-    background-color: var(--gray-1);
+    background-color: var(--bg-td-hover);
+    backdrop-filter: blur(4px);
 }
 
 .table-wrapper{
@@ -46,7 +47,7 @@ table tbody tr:hover{
     border-radius: .25rem;
     border-color: transparent;
     color: var(--dark-1);
-    background-color: var(--gray-1);
+    background-color: #fff;
     outline: none;
 }
 
@@ -62,7 +63,7 @@ table tbody tr:hover{
 .coin-image{
     width: 3rem;
     padding: .5rem;
-    background-color: var(--gray-1);
+    background-color: #fff;
     border-radius: .25rem;
     margin-right: .5rem;
 }
@@ -96,5 +97,12 @@ table tbody tr:hover{
 @media screen and (max-width: 640px) {
     .coin-search {
         flex-direction: column;
+    }
+}
+
+/* For Firefox */
+@-moz-document url-prefix() { 
+    .coin-input {
+      background-color: var(--gray-1);
     }
 }
