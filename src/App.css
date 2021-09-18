@@ -3,7 +3,7 @@
 :root {
   --bg-color: #EEF0F8;
   --bg-card: rgba(255,255,255,0.5);
-  --bg-td-hover: rgba(52,87,227,0.08);
+  --bg-td-hover: rgba(56,40,188,0.08);
   --box-shadow-color: rgba(0,0,0,0.12);
   --dark-1: #3F4254;
   --gray-1: #F3F6F9;
@@ -11,7 +11,7 @@
   --gray-3: #696B7B;
   --green-1: #10CA93;
   --red-1: #F25767;
-  --link-color: #274DE1;
+  --link-color: #3828bc;
 }
 
 * {
@@ -23,7 +23,9 @@
 
 .container{
   max-width: 64rem;
-  margin: 0 1rem;
+  margin: 1rem auto;
+  display: block;
+  width: 100%;
 }
 
 .coin-app {
@@ -45,6 +47,11 @@ body{
 a {
   text-decoration: none;
   color: var(--link-color);
+}
+
+.text-spread{
+  display: flex;
+  justify-content: space-between;
 }
 
 .text-right{

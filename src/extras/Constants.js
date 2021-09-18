@@ -59,3 +59,37 @@ export const smallChart = {
     }
 
 }
+
+// For details chart
+export const detailsChart = {
+    mainOptions: { 
+        width: 600, 
+        height: 400,
+    },
+    applyOptions: {
+        layout: {
+            background: {
+                color: 'transparent',
+            },
+        },
+        timeScale: {
+            visible: true,
+            timeVisible: true,
+        },
+        handleScroll: false,
+        handleScale: false,
+    },
+    greenArea: {
+        topColor: green.topColor,
+        bottomColor: green.bottomColor,
+        lineColor: green.lineColor,
+        lineWidth: 2,
+    },
+    redArea: {
+        topColor: red.topColor,
+        bottomColor: red.bottomColor,
+        lineColor: red.lineColor,
+        lineWidth: 2,
+    }
+
+}

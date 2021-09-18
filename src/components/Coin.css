@@ -4,10 +4,6 @@
   grid-gap: 1.5rem;
 }
 
-.coin-graph{
-  
-}
-
 .coin-details-image{
   margin: auto;
   display: block;
@@ -31,4 +27,39 @@
 .coin-details-text{
   line-height: 1.5rem;
   font-weight: 500;
+}
+
+.coin-details-subtitle{
+  margin-top: 1rem;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.25rem;
+}
+
+.return{
+  background-color: white;
+  color: var(--green-1);
+  padding: .5rem 1rem;
+  border-radius: .25rem;
+  box-shadow: 0 4px 12px var(--box-shadow-color);
+  transition: all 0.1s;
+}
+
+.return:hover{
+  background-color: var(--green-1);
+  color: white;
+}
+
+@media screen and (max-width: 640px) {
+  .coin-container{
+    grid-template-columns: 1fr;
+    grid-gap: 1rem;
+    margin: 4rem 1rem;
+  }
+  .coin-container .card{
+    margin-bottom: 0;
+  }
+  .return{
+    margin-left: 1rem;
+  }
 }
